@@ -1,6 +1,6 @@
 # Dotfiles_B450-1_Debian
 
-Dependencies:
+**Dependencies:**
 * zsh
 * oh-my-zsh
 * zsh-syntax-highlighting
