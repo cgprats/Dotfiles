@@ -1,15 +1,14 @@
 # Dotfiles_B450-1_Debian
-
 **Dependencies:**
-* zsh
+* **zsh**
 * oh-my-zsh
 * zsh-syntax-highlighting
 * zsh-autosuggestions
 * powerlevel10k
-* tmux
+* **tmux**
 * tpm (tmux plugin manager)
 * urlview
-* neovim
+* **neovim**
 * vim-plug
 * pip3
 * pynvim
