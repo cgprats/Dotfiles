@@ -3,7 +3,6 @@
 Dependencies:
 
 * zsh
-
 * oh-my-zsh
 
 * zsh-syntax-highlighting
