@@ -43,6 +43,7 @@ let g:neomake_open_list = 2
 " deoplete
 " deoplete requires installation of pynvim using pip3. Run "pip3 install --user pynvim"
 let g:deoplete#enable_at_startup = 1
+let g:airline#extensions#tabline#enabled = 1
 " vim-airline && vim-airline-themes
 let g:airline_powerline_fonts = 1
 " neovim-ranger
