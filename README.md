@@ -12,3 +12,10 @@
 * vim-plug
 * pip3
 * pynvim
+* bspwm
+* compton
+* urxvt
+* polybar
+* lxappearance
+* materia-gtk-theme
+* papirus-icon-theme
