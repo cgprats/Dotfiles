@@ -1,0 +1,10 @@
+URxvt.background: black
+URxvt.foreground: white
+URxvt.font: xft:MesloLGS NF:size=11
+URxvt.cursorBlink: true
+URxvt.scrollBar: false
+URxvt.depth: 24
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.keysym.Control-Meta-c: builtin-string:
+URxvt.keysym.Control-Meta-v: builtin-string:
