@@ -12,8 +12,8 @@
 * vim-plug
 * pip3
 * pynvim
-* bspwm
-* compton
+* **bspwm**
+* picom/compton
 * urxvt
 * polybar
 * lxappearance
