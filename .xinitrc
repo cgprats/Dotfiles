@@ -3,4 +3,5 @@ feh --bg-scale ~/.config/backgrounds/bg.png
 compton &
 polybar example &
 sxhkd -m 1 &
+xscreensaver -no-splash &
 exec bspwm
