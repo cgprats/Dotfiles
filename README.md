@@ -19,3 +19,4 @@
 * lxappearance
 * materia-gtk-theme
 * papirus-icon-theme
+* xscreensaver
