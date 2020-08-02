@@ -12,11 +12,3 @@
 * vim-plug
 * pip3
 * pynvim
-* **bspwm**
-* picom/compton
-* urxvt
-* polybar
-* lxappearance
-* materia-gtk-theme
-* papirus-icon-theme
-* xscreensaver
