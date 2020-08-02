@@ -116,8 +116,6 @@ fi
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Start X if logging into tty1
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
 # Start tmux on shell start
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
