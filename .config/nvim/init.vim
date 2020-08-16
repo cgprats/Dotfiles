@@ -21,6 +21,9 @@ set number
 set termguicolors
 set background=dark
 set clipboard=unnamedplus
+set encoding=UTF-8
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-t>     <Esc>:tabnew<CR>
 autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif 
 " Plugins
 " Run :PlugInstall to Install and :PlugUpdate to Update
@@ -29,29 +32,33 @@ Plug 'neomake/neomake'
 Plug 'Shougo/deoplete.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'airodactyl/neovim-ranger'
 Plug 'ayu-theme/ayu-vim'
+Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'wellle/context.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'chrisbra/changesPlugin'
 call plug#end()
 " Plugin Configuration
 " neomake
 call neomake#configure#automake('nrwi', 500)
 let g:neomake_open_list = 2
+" nerdtree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 " deoplete
 " deoplete requires installation of pynvim using pip3. Run "pip3 install --user pynvim"
 let g:deoplete#enable_at_startup = 1
 let g:airline#extensions#tabline#enabled = 1
 " vim-airline && vim-airline-themes
 let g:airline_powerline_fonts = 1
-" neovim-ranger
-nnoremap <f9> :tabe %:p:h<cr>
 " ctrlpvim
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
-" vim-moonfly-colors
+" vim-ayu
 colorscheme ayu
 let ayucolor="dark"
