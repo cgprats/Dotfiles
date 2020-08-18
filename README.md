@@ -4,7 +4,7 @@
 -----
 
 
-**Dependencies:**
+# **Dependencies:**
 * **zsh**
 * oh-my-zsh
 * zsh-syntax-highlighting
@@ -20,7 +20,7 @@
 
 -----
 
-**Dependency Installation Instructions**
+# **Dependency Installation Instructions:**
 
 **zsh**
 ```
@@ -74,3 +74,7 @@ sudo apt install python3-pip
 ```
 pip3 install --user pynvim
 ```
+
+
+-----
+
