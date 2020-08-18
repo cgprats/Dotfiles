@@ -79,8 +79,11 @@ pip3 install --user pynvim
 -----
 # **File locations**
 * .zshrc -> ~/.zshrc
-* * To apply zsh changes run: `source ~/.zshrc`
+    * To apply zsh changes run: `source ~/.zshrc`
 * .tmux.conf -> ~/.tmux.conf
+    * To apply tmux changes run: `tmux source ~/.tmux.conf`
 * .p10k.zsh -> ~/.p10k.zsh
 * .config/nvim/init.vim -> ~/.config/nvim.init.vim
-
+     * To Install neovim plugins, launch neovim and run the following vim commands:
+         * `:PlugInstall`
+         * `:UpdateRemotePlugins`
