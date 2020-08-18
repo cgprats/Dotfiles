@@ -20,7 +20,7 @@
 
 -----
 
-**Installation Instructions**
+**Dependency Installation Instructions**
 
 **zsh**
 ```
