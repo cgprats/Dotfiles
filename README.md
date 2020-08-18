@@ -20,4 +20,9 @@
 
 -----
 
+**Installation Instructions**
 
+**zsh**
+```
+sudo apt install zsh
+```
