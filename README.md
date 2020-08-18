@@ -12,3 +12,7 @@
 * vim-plug
 * pip3
 * pynvim
+
+-----
+
+
