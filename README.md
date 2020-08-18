@@ -77,4 +77,5 @@ pip3 install --user pynvim
 
 
 -----
+# **File locations**
 
