@@ -33,6 +33,7 @@ autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 
 call plug#begin()
 Plug 'neomake/neomake'
 Plug 'Shougo/deoplete.nvim'
+Plug 'artur-shaik/vim-javacomplete2'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ayu-theme/ayu-vim'
@@ -55,9 +56,14 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " deoplete
 " deoplete requires installation of pynvim using pip3. Run "pip3 install --user pynvim"
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#omni_patterns = {}
+let g:deoplete#omni_patterns.java = '[^. *\t]\.\w*'
+" vim-javacomplete2
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
 " vim-airline && vim-airline-themes
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+" vim-airline && vim-airline-themes
 " ctrlpvim
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
