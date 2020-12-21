@@ -48,6 +48,8 @@ call plug#end()
 " neomake
 call neomake#configure#automake('nrwi', 500)
 let g:neomake_open_list = 2
+let g:neomake_c_enabled_makers = ['gcc']
+let g:neomake_cpp_enabled_makers = ['gcc']
 " nerdtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
