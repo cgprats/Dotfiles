@@ -84,7 +84,6 @@ plugins=(
 	git
 	copyfile
 	dirhistory
-	docker
 	extract
 	python
 	sudo
