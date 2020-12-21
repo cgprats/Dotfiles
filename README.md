@@ -1,4 +1,4 @@
-# Dotfiles_B450-1_Debian
+# Dotfiles_B450-1_Linux
 
 
 -----
@@ -22,9 +22,11 @@
 
 # **Dependency Installation Instructions:**
 
+**Use Your Distribution's Package Manager in place of pkcon if you do not have PackageKit**
+
 **zsh**
 ```
-sudo apt install zsh
+sudo pkcon install zsh
 ```
 **oh-my-zsh**
 ```
@@ -48,7 +50,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 ```
 **tmux**
 ```
-sudo apt install tmux
+sudo pkcon install tmux
 ```
 **tpm**
 ```
@@ -56,11 +58,11 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 **urlview**
 ```
-sudo apt install urlview
+sudo pkcon install urlview
 ```
 **neovim**
 ```
-sudo apt install neovim
+sudo pkcon install neovim
 ```
 **vim-plug**
 ```
@@ -68,7 +70,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 ```
 **pip3**
 ```
-sudo apt install python3-pip
+sudo pkcon install python3-pip
 ```
 **pynvim**
 ```
