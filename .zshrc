@@ -86,13 +86,10 @@ plugins=(
 	dirhistory
 	docker
 	extract
-	debian
 	python
 	sudo
-	vscode
 	web-search
 	colored-man-pages
-	emoji
 	zsh-autosuggestions
 	zsh-syntax-highlighting
 )
