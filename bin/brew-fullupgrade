@@ -1,0 +1,17 @@
+#!/bin/sh
+if [[ "$OSTYPE" == "darwin"* ]]
+then
+	if [ $(which xcodebuild) ]
+	then
+		brew update
+		brew upgrade
+		brew upgrade --cask
+		brew-autoremove
+	else
+		echo "Installing Xcode Command Line Tools"
+		xcode-select --install
+		echo "Please Rerun brew-fullupgrade After Installation is Finished"
+	fi
+else
+	echo "This Script Only Works on macOS!"
+fi
