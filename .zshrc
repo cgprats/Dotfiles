@@ -9,7 +9,7 @@
 export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/sbin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/christopher/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 #Enable 256 Colors
 export TERM="xterm-256color"
