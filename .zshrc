@@ -6,7 +6,7 @@
 #fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/snap/bin:/usr/local/sbin:/usr/local/bin:/sbin:$PATH
+export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/sbin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/christopher/.oh-my-zsh"
@@ -80,18 +80,52 @@ DISABLE_UPDATE_PROMPT="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-	git
-	copyfile
-	dirhistory
-	extract
-	python
-	sudo
-	web-search
-	colored-man-pages
-	zsh-autosuggestions
-	zsh-syntax-highlighting
-)
+# An appropriate plugin for $VENDOR may not exist on some linux distros
+# Remove $VENDOR manually when needed
+if [[ "$OSTYPE" == "linux"* ]]
+then
+	plugins=(
+		git
+		copyfile
+		dirhistory
+		extract
+		python
+		sudo
+		$VENDOR
+		web-search
+		colored-man-pages
+		zsh-autosuggestions
+		zsh-syntax-highlighting
+	)
+elif [[ "$OSTYPE" == "darwin"* ]]
+then
+	plugins=(
+		git
+		copyfile
+		dirhistory
+		extract
+		python
+		sudo
+		web-search
+		osx
+		colored-man-pages
+		zsh-autosuggestions
+		zsh-syntax-highlighting
+	)
+else
+	plugins=(
+		git
+		copyfile
+		dirhistory
+		extract
+		python
+		sudo
+		web-search
+		colored-man-pages
+		zsh-autosuggestions
+		zsh-syntax-highlighting
+	)
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -117,8 +151,13 @@ fi
 
 # Start tmux on shell start
 # If not running interactively, do not do anything
-[[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
+# This does not work reliably under macOS or some WSL distros
+# Manually remove this section if it does not work
+if [[ "$OSTYPE" != "darwin"* ]]
+then
+	[[ $- != *i* ]] && return
+	[[ -z "$TMUX" ]] && exec tmux
+fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
