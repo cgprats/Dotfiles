@@ -48,6 +48,10 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugi
 ```
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
+**vim**
+```
+sudo pkcon install vim
+```
 **tmux**
 ```
 sudo pkcon install tmux
@@ -85,6 +89,7 @@ pip3 install --user pynvim
 * .tmux.conf -> ~/.tmux.conf
     * To apply tmux changes run: `tmux source ~/.tmux.conf`
 * .p10k.zsh -> ~/.p10k.zsh
+* .vimrc -> ~/.vimrc
 * .config/nvim/init.vim -> ~/.config/nvim.init.vim
      * To Install neovim plugins, launch neovim and run the following vim commands:
          * `:PlugInstall`
