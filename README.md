@@ -10,6 +10,8 @@
 * zsh-syntax-highlighting
 * zsh-autosuggestions
 * powerlevel10k
+* **vim**
+* **emacs**
 * **tmux**
 * tpm (tmux plugin manager)
 * urlview
@@ -52,6 +54,10 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 ```
 sudo pkcon install vim
 ```
+**emacs**
+```
+sudo pkcon install emacs
+```
 **tmux**
 ```
 sudo pkcon install tmux
@@ -90,6 +96,7 @@ pip3 install --user pynvim
     * To apply tmux changes run: `tmux source ~/.tmux.conf`
 * .p10k.zsh -> ~/.p10k.zsh
 * .vimrc -> ~/.vimrc
+* .emacs -> ~/.emacs
 * .config/nvim/init.vim -> ~/.config/nvim.init.vim
      * To Install neovim plugins, launch neovim and run the following vim commands:
          * `:PlugInstall`
