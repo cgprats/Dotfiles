@@ -10,8 +10,6 @@
 (set-keyboard-coding-system 'utf-8)
 ;; Visual Options
 (menu-bar-mode -1)
-(toggle-scroll-bar -1)
-(tool-bar-mode -1)
 (blink-cursor-mode -1)
 (global-hl-line-mode +1)
 (line-number-mode +1)
