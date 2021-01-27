@@ -27,6 +27,7 @@ inoremap <C-t>     <Esc>:tabnew<CR>
 nnoremap <F5>      :make<CR>
 inoremap <F5>      <Esc>:make<CR>
 nnoremap <C-n>     :NERDTreeToggle<CR>
+map <F7> gg=G
 autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif 
 " Plugins
 " Run :PlugInstall to Install and :PlugUpdate to Update
