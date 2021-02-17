@@ -82,7 +82,8 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 ```
 sudo pkcon install python3-pip
 ```
-**pynvim**
+**pynvim - Only Needed on Some Distributions**
+Some Linux distributions provide pynvim as a package. For example, on openSUSE installing neovim also install pynvim through zypper
 ```
 pip3 install --user pynvim
 ```
@@ -92,6 +93,8 @@ pip3 install --user pynvim
 # **File locations**
 * .zshrc -> ~/.zshrc
     * To apply zsh changes run: `source ~/.zshrc`
+    * If you have an error relating to missing plugins, try removing the $VENDOR plugin.
+    * If on macOS or on some WSL distros, remove the autostart tmux block.
 * .tmux.conf -> ~/.tmux.conf
     * To apply tmux changes run: `tmux source ~/.tmux.conf`
 * .p10k.zsh -> ~/.p10k.zsh
