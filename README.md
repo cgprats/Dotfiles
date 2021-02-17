@@ -78,11 +78,11 @@ sudo pkcon install neovim
 ```
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
-**pip3 - Only Needed on Some Distributions:** Some Linux distributions provide the needed python packages in their repositories.
+**pip3 - Not Needed on Some Linux Distributions:** Some Linux distributions provide the needed python packages in their repositories.
 ```
 sudo pkcon install python3-pip
 ```
-**pynvim - Only Needed on Some Distributions:** Some Linux distributions provide pynvim as a package. For example, on openSUSE installing neovim also install pynvim through zypper
+**pynvim - Not Needed on Some Distributions:** Some Linux distributions provide pynvim as a package. For example, on openSUSE installing neovim also install pynvim through zypper
 ```
 pip3 install --user pynvim
 ```
