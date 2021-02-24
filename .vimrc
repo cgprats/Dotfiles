@@ -21,4 +21,4 @@ set number
 set termguicolors
 set clipboard=unnamedplus
 set encoding=UTF-8
-colorscheme industry
+colorscheme evening
