@@ -44,6 +44,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'wellle/context.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'chrisbra/changesPlugin'
+Plug 'machakann/vim-highlightedyank'
 call plug#end()
 " Plugin Configuration
 " neomake
