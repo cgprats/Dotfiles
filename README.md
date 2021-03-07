@@ -1,4 +1,4 @@
-# Dotfiles_B450-1_Linux
+# Dotfiles
 
 
 -----
