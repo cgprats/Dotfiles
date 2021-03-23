@@ -27,7 +27,7 @@ inoremap <C-t>     <Esc>:tabnew<CR>
 nnoremap <F5>      :make<CR>
 inoremap <F5>      <Esc>:make<CR>
 nnoremap <C-n>     :NERDTreeToggle<CR>
-map <F7>           =G
+map <F7> =G
 autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 " Plugins
 " Run :PlugInstall to Install and :PlugUpdate to Update
@@ -37,7 +37,6 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ayu-theme/ayu-vim'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -45,6 +44,7 @@ Plug 'wellle/context.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'chrisbra/changesPlugin'
 Plug 'machakann/vim-highlightedyank'
+Plug 'tomasiser/vim-code-dark'
 call plug#end()
 " Plugin Configuration
 " neomake
@@ -66,11 +66,11 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 " vim-airline && vim-airline-themes
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'codedark'
 " vim-airline && vim-airline-themes
 " ctrlpvim
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
-" vim-ayu
-colorscheme ayu
-let ayucolor="dark"
+" tender color scheme
+colorscheme codedark
