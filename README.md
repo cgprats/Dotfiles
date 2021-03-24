@@ -82,7 +82,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 ```
 sudo pkcon install python3-pip
 ```
-**pynvim - Not Needed on Some Linux Distributions:** Some Linux distributions provide pynvim as a package. For example, on openSUSE installing neovim also install pynvim through zypper
+**pynvim - Not Needed on Some Linux Distributions:** Some Linux distributions provide pynvim as a package. For example, on Debian (Bullseye and Greater) and openSUSE (15.2 and later) installing neovim also install pynvim through apt or zypper, respectively
 ```
 pip3 install --user pynvim
 ```
