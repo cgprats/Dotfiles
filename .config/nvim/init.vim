@@ -52,7 +52,7 @@ let g:ale_open_list = 1
 let g:ale_set_signs = 1
 let g:ale_virtualtext_cursor = 1
 let g:ale_set_highlights = 1
-let g:ale_linters = {'c': ['cc'], 'cpp': ['c++'], 'python': ['pylint']}
+let g:ale_linters = {'c': ['gcc'], 'cpp': ['g++'], 'python': ['pylint']}
 
 " nerdtree
 autocmd StdinReadPre * let s:std_in=1
