@@ -29,10 +29,11 @@ inoremap <F5>      <Esc>:make<CR>
 nnoremap <C-n>     :NERDTreeToggle<CR>
 map <F7> =G
 autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
 " Plugins
 " Run :PlugInstall to Install and :PlugUpdate to Update
 call plug#begin()
-Plug 'neomake/neomake'
+Plug 'dense-analysis/ale'
 Plug 'Shougo/deoplete.nvim'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'vim-airline/vim-airline'
@@ -44,31 +45,37 @@ Plug 'chrisbra/changesPlugin'
 Plug 'machakann/vim-highlightedyank'
 Plug 'tomasiser/vim-code-dark'
 call plug#end()
+
 " Plugin Configuration
-" neomake
-call neomake#configure#automake('nrwi', 500)
-let g:neomake_open_list = 2
-let g:neomake_c_enabled_makers = ['gcc']
-let g:neomake_cpp_enabled_makers = ['gcc']
+" ale
+let g:ale_open_list = 1
+let g:ale_set_signs = 1
+let g:ale_virtualtext_cursor = 1
+let g:ale_set_highlights = 1
+let g:ale_linters = {'c': ['cc'], 'cpp': ['c++'], 'python': ['pylint']}
+
 " nerdtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
 " deoplete
 " deoplete requires installation of pynvim using pip3. Run "pip3 install --user pynvim"
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#omni_patterns = {}
 let g:deoplete#omni_patterns.java = '[^. *\t]\.\w*'
+"call deoplete#custom#option('sources', {
+"			\ '_': ['ale'],
+"			\})
+
 " vim-javacomplete2
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
 " vim-airline && vim-airline-themes
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#neomake#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 let g:airline_theme = 'codedark'
-" ctrlpvim
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-" set color scheme
+
+" color scheme
 colorscheme codedark
