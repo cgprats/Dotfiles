@@ -64,6 +64,7 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 " vim-airline && vim-airline-themes
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#neomake#enabled = 1
 let g:airline_theme = 'codedark'
 " ctrlpvim
 let g:ctrlp_map = '<c-p>'
