@@ -4,7 +4,7 @@ set showcmd
 set showmatch
 set wildmenu
 set incsearch
-set hlsearch
+set nohlsearch
 set smartcase
 set lazyredraw
 set ttyfast
