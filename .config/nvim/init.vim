@@ -43,7 +43,7 @@ Plug 'wellle/context.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'chrisbra/changesPlugin'
 Plug 'machakann/vim-highlightedyank'
-Plug 'tomasiser/vim-code-dark'
+Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
 " Plugin Configuration
@@ -75,7 +75,8 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1
-let g:airline_theme = 'codedark'
+let g:airline_theme = 'ayu_dark'
 
 " color scheme
-colorscheme codedark
+let ayucolor="dark"
+colorscheme ayu
