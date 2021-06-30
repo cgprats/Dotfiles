@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Installing Packages"
-pkcon install zsh vim emacs tmux urlview neovim neofetch
+pkcon install zsh vim emacs tmux urlview neovim neofetch nodejs
 clear
 
 echo "Setting zsh as default shell"
@@ -23,8 +23,9 @@ echo "Note: Please press C-b and then i to install tpm plugins"
 
 echo "Installing vim-plug"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-echo "Note: Please install pynvim if it is not installed alongside neovim"
-echo "Please run :PlugInstall and :UpdateRemotePlugins in Normal mode to activate neovim plugins"
+echo "Please run :PlugInstall in Normal mode to activate neovim plugins"
+echo "Please install the coc-extensions you wish to use"
+echo "Please see: https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions for a list"
 
 echo "Copying config files"
 cp -v .zshrc ~/.zshrc
