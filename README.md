@@ -17,8 +17,7 @@
 * urlview
 * **neovim**
 * vim-plug
-* pip3
-* pynvim
+* nodejs
 
 -----
 
@@ -78,15 +77,10 @@ sudo pkcon install neovim
 ```
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
-**pip3 - Not Needed on Some Linux Distributions:** Some Linux distributions provide the needed python packages in their repositories.
+**nodejs**
 ```
-sudo pkcon install python3-pip
+sudo pkcon install nodejs
 ```
-**pynvim - Not Needed on Some Linux Distributions:** Some Linux distributions provide pynvim as a package. For example, on Debian (Bullseye and Greater) and openSUSE (15.2 and later) installing neovim also install pynvim through apt or zypper, respectively
-```
-pip3 install --user pynvim
-```
-
 
 -----
 # **File locations**
@@ -102,4 +96,9 @@ pip3 install --user pynvim
 * .config/nvim/init.vim -> ~/.config/nvim.init.vim
      * To Install neovim plugins, launch neovim and run the following vim commands:
          * `:PlugInstall`
-         * `:UpdateRemotePlugins`
+     * Install coc extensions with `:CocInstall $extension_name`
+     * I use the following coc extensions
+         * coc-clangd
+         * coc-json
+         * coc-sh
+         * coc-spellchecker
