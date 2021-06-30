@@ -25,6 +25,9 @@
 (size-indication-mode t)
 (setq-default indicate-empty-lines t)
 
+;; Enable XTerm mouse
+(xterm-mouse-mode)
+
 ;; Use System Clipboard
 (setq x-select-enable-clibpoard t)
 
