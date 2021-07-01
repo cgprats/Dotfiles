@@ -103,5 +103,5 @@ sudo pkcon install nodejs
          * coc-json
          * coc-pyright
          * coc-sh
-         * coc-spellchecker
+         * coc-spell-checker
          * coc-tsserver
