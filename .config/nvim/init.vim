@@ -45,6 +45,8 @@ call plug#end()
 
 " coc
 let g:coc_global_extensions=[ 'coc-clangd', 'coc-git', 'coc-highlight', 'coc-java', 'coc-json', 'coc-omnisharp', 'coc-pyright', 'coc-sh', 'coc-spell-checker', 'coc-tsserver', 'coc-yank' ]
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " nerdtree
 autocmd StdinReadPre * let s:std_in=1
