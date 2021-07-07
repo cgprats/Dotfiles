@@ -99,9 +99,13 @@ sudo pkcon install nodejs
      * Install coc extensions with `:CocInstall $extension_name`
      * I use the following coc extensions
          * coc-clangd
+         * coc-git
+         * coc-highlight
          * coc-java
          * coc-json
+         * coc-omnisharp
          * coc-pyright
          * coc-sh
          * coc-spell-checker
          * coc-tsserver
+         * coc-yank
