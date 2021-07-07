@@ -22,6 +22,7 @@ set termguicolors
 set background=dark
 set clipboard=unnamedplus
 set encoding=UTF-8
+set inccommand=nosplit
 nnoremap <C-t>     :tabnew<CR>
 inoremap <C-t>     <Esc>:tabnew<CR>
 nnoremap <F5>      :make<CR>
@@ -34,24 +35,21 @@ autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 
 " Run :PlugInstall to Install and :PlugUpdate to Update
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'artur-shaik/vim-javacomplete2'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
 Plug 'wellle/context.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'chrisbra/changesPlugin'
-Plug 'machakann/vim-highlightedyank'
 Plug 'ayu-theme/ayu-vim'
 call plug#end()
+
+" coc
+let g:coc_global_extensions=[ 'coc-clangd', 'coc-git', 'coc-highlight', 'coc-java', 'coc-json', 'coc-omnisharp', 'coc-pyright', 'coc-sh', 'coc-spell-checker', 'coc-tsserver', 'coc-yank' ]
 
 " nerdtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-
-" vim-javacomplete2
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 " vim-airline && vim-airline-themes
 let g:airline_powerline_fonts = 1
