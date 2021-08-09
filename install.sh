@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Installing Packages"
-pkcon install zsh vim emacs tmux urlview neovim neofetch nodejs
+pkcon install zsh vim emacs tmux urlview neovim neofetch nodejs npm-default
 clear
 
 echo "Setting zsh as default shell"
