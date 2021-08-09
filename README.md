@@ -17,7 +17,8 @@
 * urlview
 * **neovim**
 * vim-plug
-* nodejs
+* **nodejs**
+* **npm**
 
 -----
 
@@ -80,6 +81,10 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 **nodejs**
 ```
 sudo pkcon install nodejs
+```
+**npm**
+```
+sudo pkcon install npm-default
 ```
 
 -----
