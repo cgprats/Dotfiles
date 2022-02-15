@@ -66,7 +66,7 @@ fi
 # Set the theme
 antigen theme romkatv/powerlevel10k
 
-# Apple Antigen settings
+# Apply Antigen settings
 antigen apply
 
 # Load powerlevel10k configuration
