@@ -1,19 +1,17 @@
-#!/bin/bash
+#!/bin/sh
 echo "Installing Packages"
-pkcon install zsh vim emacs tmux urlview neovim neofetch nodejs-default npm-default
+if [[ "OSTYPE" == "linux"* ]]
+then
+  pkcon install zsh vim emacs tmux urlview neovim neofetch nodejs-default npm-default
+elif [[ "OSTYPE" == "darwin"* ]]
+then
+  brew install zsh vim emacs tmux urlview neovim neofetch node npm
+fi
 clear
 
 echo "Setting zsh as default shell"
 chsh -s $(which zsh)
 
-echo "Installing oh-my-zsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-ZSH_CUSTOM=~/.oh-my-zsh/custom
-
-echo "Installing zsh plugins"
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 echo "Note: Please install a Nerd Font of your choice to use powerlevel10k"
 echo "Please see: https://github.com/ryanoasis/nerd-fonts"
 
