@@ -55,6 +55,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # Plugins that should be used only on Linux
 if [[ "$OSTYPE" == "linux"* ]]
 then
+	antigen bundle command-not-found
 	# Comment this out if a zsh plugin does not exist
 	# for your Linux distribution
 	antigen bundle $VENDOR
