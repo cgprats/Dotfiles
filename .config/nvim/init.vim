@@ -40,7 +40,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
 Plug 'wellle/context.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'ayu-theme/ayu-vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
 " coc
@@ -53,12 +54,18 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
+" nvim-treesitter
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+	ensure_installed = "maintained"
+}
+EOF
+
 " vim-airline && vim-airline-themes
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#ale#enabled = 1
-let g:airline_theme = 'ayu_dark'
+let g:airline#extensions#coc#enabled = 1
+let g:airline_theme = 'codedark'
 
 " color scheme
-let ayucolor="dark"
-colorscheme ayu
+colorscheme codedark
