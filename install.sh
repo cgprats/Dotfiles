@@ -1,9 +1,9 @@
 #!/bin/sh
 echo "Installing Packages"
-if [[ "OSTYPE" == "linux"* ]]
+if [[ "$OSTYPE" == "linux"* ]]
 then
   pkcon install zsh vim emacs tmux urlview neovim neofetch nodejs-default npm-default
-elif [[ "OSTYPE" == "darwin"* ]]
+elif [[ "$OSTYPE" == "darwin"* ]]
 then
   brew install zsh vim emacs tmux urlview neovim neofetch node npm
 fi
