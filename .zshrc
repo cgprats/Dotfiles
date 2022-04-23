@@ -1,5 +1,10 @@
 # Set PATH
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH
+## Add homebrew to path if on macOS
+if [[ $OSTYPE == "darwin"* ]]
+then
+	export PATH=/opt/homebrew/bin:$PATH
+fi
+export PATH=$HOME/bin:$HOME/.local/bin:$PATH:/usr/local/sbin:/usr/sbin:/sbin
 
 # Set terminal type
 export TERM="xterm-256color"
