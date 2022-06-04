@@ -13,6 +13,7 @@ set scrolloff=3
 set mouse=a
 set autoread
 set history=1000
+set colorcolumn=80
 set list listchars=tab:\│\ ,trail:-,extends:>,precedes:<,nbsp:+
 let &showbreak = '↪'
 syntax on
