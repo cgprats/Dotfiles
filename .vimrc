@@ -15,6 +15,7 @@ set mouse=a
 set autoread
 set history=1000
 set laststatus=2
+set colorcolumn=80
 syntax on
 filetype indent on
 set number
