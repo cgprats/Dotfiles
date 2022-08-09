@@ -1,1 +1,0 @@
-set guifont=JetBrainsMono\ Nerd\ Font:h9
