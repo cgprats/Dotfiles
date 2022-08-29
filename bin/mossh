@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Attempting connection via mosh"
+mosh $1
+if [[ $? -ne 0 ]]
+then
+	echo "Connection via mosh failed"
+	echo "Attempting connection via ssh"
+	ssh $1
+fi
