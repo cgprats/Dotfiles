@@ -4,7 +4,7 @@ if [[ $OSTYPE == "darwin"* ]]
 then
 	export PATH=/opt/homebrew/bin:$PATH
 fi
-export PATH=$HOME/bin:$HOME/.local/bin:$PATH:/usr/local/sbin:/usr/sbin:/sbin
+export PATH=$HOME/bin:$HOME/.local/bin:$PATH:/var/lib/flatpak/exports/bin:/usr/local/sbin:/usr/sbin:/sbin
 
 # Set terminal type
 export TERM="xterm-256color"
