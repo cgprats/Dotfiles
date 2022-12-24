@@ -8,25 +8,25 @@ then
     echo "Detected Linux distribution: $ID"
     case "$ID" in
     fedora*)
-      sudo dnf install zsh vim-enhanced emacs tmux urlview neovim neofetch nodejs npm mosh
+      sudo dnf install zsh vim-enhanced emacs tmux neovim neofetch nodejs npm mosh
       ;;
     ubuntu*)
-      sudo apt install zsh vim emacs tmux urlview neovim neofetch nodejs npm mosh
+      sudo apt install zsh vim emacs tmux neovim neofetch nodejs npm mosh
       ;;
     opensuse*)
       sudo zypper install zsh vim emacs tmux neovim nodejs-default npm-default mosh
       ;;
     debian*)
-      sudo apt install vim emacs tmux urlview neovim neofetch nodejs npm mosh
+      sudo apt install vim emacs tmux neovim neofetch nodejs npm mosh
       ;;
      *)
-      pkcon install zsh vim-enhanced emacs tmux urlview neovim neofetch nodejs npm mosh
+      pkcon install zsh vim-enhanced emacs tmux neovim neofetch nodejs npm mosh
       ;;
     esac
   fi
 elif [[ "$OSTYPE" == "darwin"* ]]
 then
-  brew install zsh vim emacs tmux urlview neovim neofetch node npm mosh
+  brew install zsh vim emacs tmux neovim neofetch node npm mosh
 fi
 
 echo "Setting zsh as default shell"
