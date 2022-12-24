@@ -64,7 +64,7 @@ then
 	antigen bundle command-not-found
 	# Comment this out if a zsh plugin does not exist
 	# for your Linux distribution
-	if [[ ! -f /etc/os-release ]]
+	if [[ -f /etc/os-release ]]
 	then
 		source /etc/os-release
 		antigen bundle $ID
