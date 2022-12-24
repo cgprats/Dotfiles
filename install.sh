@@ -15,8 +15,6 @@ chsh -s $(which zsh)
 echo "Note: Please install a Nerd Font of your choice to use powerlevel10k"
 echo "Please see: https://github.com/ryanoasis/nerd-fonts"
 
-echo "Installing tmux plugin manager"
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo "Note: Please press C-b and then i to install tpm plugins"
 
 echo "Please run :PlugInstall in Normal mode to activate neovim plugins"
