@@ -17,7 +17,6 @@ echo "Please see: https://github.com/ryanoasis/nerd-fonts"
 
 echo "Note: Please press C-b and then i to install tpm plugins"
 
-echo "Please run :PlugInstall in Normal mode to activate neovim plugins"
 echo "Please install the coc-extensions you wish to use"
 echo "Please see: https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions for a list"
 
