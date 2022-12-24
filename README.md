@@ -22,7 +22,7 @@
 
 # **Dependency Installation Instructions:**
 
-**Use Your Distribution's Package Manager in place of pkcon if you do not have PackageKit**
+**This is for when your current distribution is unsupported by install.sh**
 
 **zsh**
 ```
