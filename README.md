@@ -43,10 +43,6 @@ sudo pkcon install emacs
 ```
 sudo pkcon install tmux
 ```
-**tpm**
-```
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
 **urlview**
 ```
 sudo pkcon install urlview
