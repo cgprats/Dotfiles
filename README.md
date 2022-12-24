@@ -12,7 +12,6 @@
 * **emacs**
 * **tmux**
 * tpm (tmux plugin manager; will be installed by .tmux.conf)
-* urlview
 * **neovim**
 * Packer (will be installed by init.vim)
 * **nodejs**
@@ -42,10 +41,6 @@ sudo pkcon install emacs
 **tmux**
 ```
 sudo pkcon install tmux
-```
-**urlview**
-```
-sudo pkcon install urlview
 ```
 **neovim**
 ```
