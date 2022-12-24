@@ -64,8 +64,12 @@ then
 	antigen bundle command-not-found
 	# Comment this out if a zsh plugin does not exist
 	# for your Linux distribution
-	antigen bundle $VENDOR
-elif [[ "OSTYPE" == "darwin"* ]]
+	if [[ ! -f /etc/os-release ]]
+	then
+		source /etc/os-release
+		antigen bundle $ID
+	fi
+elif [[ "$OSTYPE" == "darwin"* ]]
 then
 	antigen bundle macos
 fi
