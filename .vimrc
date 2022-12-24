@@ -19,6 +19,5 @@ set colorcolumn=80
 syntax on
 filetype indent on
 set number
-set termguicolors
 set clipboard=unnamedplus
 set encoding=UTF-8
