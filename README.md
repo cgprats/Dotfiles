@@ -11,10 +11,10 @@
 * **vim**
 * **emacs**
 * **tmux**
-* tpm (tmux plugin manager)
+* tpm (tmux plugin manager; will be installed by .tmux.conf)
 * urlview
 * **neovim**
-* vim-plug
+* Packer (will be installed by init.vim)
 * **nodejs**
 * **npm**
 
