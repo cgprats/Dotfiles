@@ -58,21 +58,6 @@ antigen bundle web-search
 antigen bundle colored-man-pages
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
-# Plugins that should be used only on Linux
-if [[ "$OSTYPE" == "linux"* ]]
-then
-	antigen bundle command-not-found
-	# Comment this out if a zsh plugin does not exist
-	# for your Linux distribution
-	if [[ -f /etc/os-release ]]
-	then
-		source /etc/os-release
-		antigen bundle $ID
-	fi
-elif [[ "$OSTYPE" == "darwin"* ]]
-then
-	antigen bundle macos
-fi
 
 # Set the theme
 antigen theme romkatv/powerlevel10k
