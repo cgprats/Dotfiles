@@ -61,7 +61,6 @@ return require('packer').startup(function(use)
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
   use 'preservim/nerdtree'
-  use 'wellle/context.vim'
   use 'ryanoasis/vim-devicons'
   use {
 	  'nvim-treesitter/nvim-treesitter',
@@ -70,6 +69,7 @@ return require('packer').startup(function(use)
 	    ts_update()
 	  end,
   }
+  use 'nvim-treesitter/nvim-treesitter-context'
   use 'tomasiser/vim-code-dark'
 
   -- Automatically set up your configuration after cloning packer.nvim
