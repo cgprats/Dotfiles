@@ -61,6 +61,7 @@ local packer_bootstrap = ensure_packer()
 require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	-- My plugins here
+	use 'akinsho/bufferline.nvim'
 	use 'Mofiqul/vscode.nvim'
 	use {
 		'neoclide/coc.nvim',
@@ -84,6 +85,15 @@ require('packer').startup(function(use)
 		require('packer').sync()
 	end
 end)
+
+-- Nvim Treesitter --
+require'nvim-treesitter.configs'.setup {
+	ensure_installed = "all",
+	auto_install = true;
+	highlight = {
+		enable = true
+	}
+}
 
 -- COC --
 vim.g.coc_global_extensions = {
@@ -116,6 +126,8 @@ keyset("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r
 
 -- Nvim Tree --
 require("nvim-tree").setup({
+	open_on_setup = true,
+	open_on_setup_file = true,
 	diagnostics = {
 		enable = true
 	},
@@ -141,6 +153,15 @@ require('vscode').setup({
 require('lualine').setup({
 	options = {
 		theme = 'vscode',
+		extensions = {'nvim-tree'},
 		sources = {'nvim_diagnostic', 'coc'}
+	}
+})
+
+-- Bufferline --
+require("bufferline").setup({
+	options = {
+		mode = "buffers",
+		diagnostics = "coc"
 	}
 })
