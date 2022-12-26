@@ -67,7 +67,7 @@ sudo pkcon install npm-default
 * .p10k.zsh -> ~/.p10k.zsh
 * .vimrc -> ~/.vimrc
 * .emacs -> ~/.emacs
-* .config/nvim/init.vim -> ~/.config/nvim.init.vim
+* .config/nvim/init.lua -> ~/.config/nvim/init.lua
      * To Install neovim plugins, launch neovim and run the following vim commands:
          * `:PlugInstall`
      * Install coc extensions with `:CocInstall $extension_name`
