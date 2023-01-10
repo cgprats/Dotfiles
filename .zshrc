@@ -25,7 +25,6 @@ export EDITOR=vim
 alias doas="sudo"
 alias vim="nvim"
 alias emacs="emacs -nw"
-alias ssh="mossh"
 
 # Set platform specific aliases
 if [[ $OSTYPE == "darwin"* ]]
