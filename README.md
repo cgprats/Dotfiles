@@ -13,9 +13,7 @@
 * **tmux**
 * tpm (tmux plugin manager; will be installed by .tmux.conf)
 * **neovim**
-* Packer (will be installed by init.vim)
-* **nodejs**
-* **npm**
+* Packer (will be installed by init.lua)
 
 -----
 
@@ -45,15 +43,6 @@ sudo pkcon install tmux
 **neovim**
 ```
 sudo pkcon install neovim
-```
-
-**nodejs**
-```
-sudo pkcon install nodejs
-```
-**npm**
-```
-sudo pkcon install npm-default
 ```
 
 -----
