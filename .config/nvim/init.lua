@@ -64,8 +64,23 @@ require('packer').startup(function(use)
 	use 'akinsho/bufferline.nvim'
 	use 'Mofiqul/vscode.nvim'
 	use {
-		'neoclide/coc.nvim',
-		branch = 'release'
+		'VonHeikemen/lsp-zero.nvim',
+		requires = {
+			-- LSP Support
+			{'neovim/nvim-lspconfig'},
+			{'williamboman/mason.nvim'},
+			{'williamboman/mason-lspconfig.nvim'},
+			-- Autocompletion
+			{'hrsh7th/nvim-cmp'},
+			{'hrsh7th/cmp-buffer'},
+			{'hrsh7th/cmp-path'},
+			{'saadparwaiz1/cmp_luasnip'},
+			{'hrsh7th/cmp-nvim-lsp'},
+			{'hrsh7th/cmp-nvim-lua'},
+			-- Snippets
+			{'L3MON4D3/LuaSnip'},
+			{'rafamadriz/friendly-snippets'}
+		}
 	}
 	use 'nvim-lualine/lualine.nvim'
 	use 'nvim-tree/nvim-tree.lua'
@@ -95,34 +110,10 @@ require'nvim-treesitter.configs'.setup {
 	}
 }
 
--- COC --
-vim.g.coc_global_extensions = {
-	'coc-clangd',
-	'coc-git',
-	'coc-highlight',
-	'coc-java',
-	'coc-json',
-	'coc-omnisharp',
-	'coc-pyright',
-	'coc-sh',
-	'coc-spell-checker',
-	'coc-sumneko-lua',
-	'coc-tsserver',
-	'coc-yank'
-}
-
-local keyset = vim.keymap.set
--- COC Autocomplete
-function _G.check_back_space()
-    local col = vim.fn.col('.') - 1
-    return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
-end
-local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
-keyset("i", "<TAB>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
-keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
--- Make <CR> to accept selected completion item or notify coc.nvim to format
--- <C-g>u breaks current undo, please make your own choice
-keyset("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
+-- LSP-Zero --
+local lsp = require('lsp-zero')
+lsp.preset('recommended')
+lsp.setup()
 
 -- Nvim Tree --
 require("nvim-tree").setup({
@@ -154,7 +145,7 @@ require('lualine').setup({
 	options = {
 		theme = 'vscode',
 		extensions = {'nvim-tree'},
-		sources = {'nvim_diagnostic', 'coc'}
+		sources = {'nvim_diagnostic', 'nvim_lsp'}
 	}
 })
 
@@ -162,6 +153,6 @@ require('lualine').setup({
 require("bufferline").setup({
 	options = {
 		mode = "buffers",
-		diagnostics = "coc"
+		diagnostics = "nvim_lsp"
 	}
 })
