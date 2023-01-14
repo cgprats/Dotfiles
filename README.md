@@ -69,17 +69,4 @@ sudo pkcon install npm-default
 * .emacs -> ~/.emacs
 * .config/nvim/init.lua -> ~/.config/nvim/init.lua
      * To Install neovim plugins, launch neovim and run the following vim commands:
-         * `:PlugInstall`
-     * Install coc extensions with `:CocInstall $extension_name`
-     * I use the following coc extensions
-         * coc-clangd
-         * coc-git
-         * coc-highlight
-         * coc-java
-         * coc-json
-         * coc-omnisharp
-         * coc-pyright
-         * coc-sh
-         * coc-spell-checker
-         * coc-tsserver
-         * coc-yank
+         * `:PackerInstall`
