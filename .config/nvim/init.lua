@@ -22,6 +22,7 @@ vim.opt.listchars.extends = ">"
 vim.opt.listchars.precedes = "<"
 vim.opt.listchars.nbsp = "+"
 vim.opt.showbreak = "↪"
+vim.opt.spell = true
 vim.opt.syntax = "on"
 vim.filetype.indent = true
 vim.opt.number = true
