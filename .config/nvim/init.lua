@@ -66,6 +66,7 @@ require('packer').startup(function(use)
 	use 'Mofiqul/vscode.nvim'
 	use {
 		'VonHeikemen/lsp-zero.nvim',
+		branch = 'v2.x',
 		requires = {
 			-- LSP Support
 			{'neovim/nvim-lspconfig'},
@@ -112,9 +113,12 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- LSP-Zero --
-local lsp = require('lsp-zero')
-lsp.nvim_workspace()
-lsp.preset('recommended')
+local lsp = require('lsp-zero').preset({})
+lsp.on_attach(function(client, bufnr)
+  lsp.default_keymaps({buffer = bufnr})
+end)
+require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+
 lsp.setup()
 
 -- Nvim Tree --
