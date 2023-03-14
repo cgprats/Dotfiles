@@ -113,13 +113,57 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- LSP-Zero --
-local lsp = require('lsp-zero').preset({})
+local lsp = require('lsp-zero').preset({'recommended'})
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
 end)
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-
 lsp.setup()
+
+-- CMP --
+local cmp = require('cmp')
+local cmp_action = require('lsp-zero').cmp_action()
+
+cmp.setup({
+	mapping = {
+		-- confirm selection
+		['<CR>'] = cmp.mapping.confirm({select = false}),
+		['<C-y>'] = cmp.mapping.confirm({select = false}),
+    
+		-- navigate items on the list
+    ['<Up>'] = cmp.mapping.select_prev_item(select_opts),
+    ['<Down>'] = cmp.mapping.select_next_item(select_opts),
+    ['<C-p>'] = cmp.mapping.select_prev_item(select_opts),
+    ['<C-n>'] = cmp.mapping.select_next_item(select_opts),
+
+		-- scroll up and down in the completion documentation
+    ['<C-f>'] = cmp.mapping.scroll_docs(5),
+    ['<C-u>'] = cmp.mapping.scroll_docs(-5),
+
+		-- when menu is visible, navigate to next item
+    -- when line is empty, insert a tab character
+    -- else, activate completion
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item(select_opts)
+      elseif s.check_back_space() then
+        fallback()
+      else
+        cmp.complete()
+      end
+    end, {'i', 's'}),
+
+    -- when menu is visible, navigate to previous item on list
+    -- else, revert to default behavior
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item(select_opts)
+      else
+        fallback()
+      end
+    end, {'i', 's'}),
+	}
+})
 
 -- Nvim Tree --
 require("nvim-tree").setup({
