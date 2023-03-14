@@ -113,13 +113,12 @@ require'nvim-treesitter.configs'.setup {
 
 -- LSP-Zero --
 local lsp = require('lsp-zero')
+lsp.nvim_workspace()
 lsp.preset('recommended')
 lsp.setup()
 
 -- Nvim Tree --
 require("nvim-tree").setup({
-	open_on_setup = true,
-	open_on_setup_file = true,
 	diagnostics = {
 		enable = true
 	},
@@ -136,10 +135,13 @@ require("nvim-tree").setup({
 })
 
 -- VSCode.nvim --
+local c = require('vscode.colors').get_colors()
 require('vscode').setup({
 	change_style = "dark",
+	italic_comments = true,
 	disable_nvimtree_bg = true
 })
+require('vscode').load()
 
 -- Lualine --
 require('lualine').setup({
