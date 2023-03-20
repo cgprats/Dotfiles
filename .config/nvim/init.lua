@@ -139,7 +139,7 @@ cmp.setup({
 		-- scroll up and down in the completion documentation
     ['<C-f>'] = cmp.mapping.scroll_docs(5),
     ['<C-u>'] = cmp.mapping.scroll_docs(-5),
-
+	}
 })
 
 -- Nvim Tree --
