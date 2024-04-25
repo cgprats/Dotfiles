@@ -45,63 +45,60 @@ vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", {noremap = true, si
 vim.api.nvim_set_keymap("n", "<F7>", "=G", {silent = true})
 
 -- Plugins --
--- Automatically install Packer and Plugins if missing --
-local ensure_packer = function()
-	local fn = vim.fn
-	local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-	if fn.empty(fn.glob(install_path)) > 0 then
-		fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-		vim.cmd [[packadd packer.nvim]]
-		return true
-	end
-	return false
+-- Automatically install Lazy and Plugins if missing --
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
-
-local packer_bootstrap = ensure_packer()
-
-require('packer').startup(function(use)
-	use 'wbthomason/packer.nvim'
+vim.opt.rtp:prepend(lazypath)
+require("lazy").setup({
 	-- My plugins here
-	use 'akinsho/bufferline.nvim'
-	use 'Mofiqul/vscode.nvim'
-	use {
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v2.x',
-		requires = {
-			-- LSP Support
-			{'neovim/nvim-lspconfig'},
-			{'williamboman/mason.nvim'},
-			{'williamboman/mason-lspconfig.nvim'},
-			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},
-			{'hrsh7th/cmp-buffer'},
-			{'hrsh7th/cmp-path'},
-			{'saadparwaiz1/cmp_luasnip'},
-			{'hrsh7th/cmp-nvim-lsp'},
-			{'hrsh7th/cmp-nvim-lua'},
-			-- Snippets
-			{'L3MON4D3/LuaSnip'},
-			{'rafamadriz/friendly-snippets'}
-		}
-	}
-	use 'nvim-lualine/lualine.nvim'
-	use 'nvim-tree/nvim-tree.lua'
-	use 'nvim-tree/nvim-web-devicons'
-	use {
-		'nvim-treesitter/nvim-treesitter',
-		run = function()
-			local ts_update = require('nvim-treesitter.install').update({with_sync = true})
-			ts_update()
-		end,
-	}
-	use 'nvim-treesitter/nvim-treesitter-context'
+	'akinsho/bufferline.nvim',
+	'Mofiqul/vscode.nvim',
+	'nvim-lualine/lualine.nvim',
+	'nvim-tree/nvim-tree.lua',
+	'nvim-tree/nvim-web-devicons',
+	{
+		'nvim-treesitter/nvim-treesitter', build = ":TSUpdate"
+	},
+	'nvim-treesitter/nvim-treesitter-context',
+	{'williamboman/mason.nvim'},
+	{'williamboman/mason-lspconfig.nvim'},
+	{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
+	{'neovim/nvim-lspconfig'},
+	{'hrsh7th/cmp-nvim-lsp'},
+	{'hrsh7th/nvim-cmp'},
+	{'L3MON4D3/LuaSnip'},
+})
+-- LSP-Zero --
+local lsp_zero = require('lsp-zero')
 
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
-	if packer_bootstrap then
-		require('packer').sync()
-	end
+lsp_zero.on_attach(function(client, bufnr)
+	-- see :help lsp-zero-keybindings
+	-- to learn the available actions
+	lsp_zero.default_keymaps({buffer = bufnr})
 end)
+
+-- to learn how to use mason.nvim
+-- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
+require('mason').setup({})
+require('mason-lspconfig').setup({
+	-- Set list of LSP servers to be installed. More can also be installed using :LspInstall --
+	ensure_installed = { "lua_ls", "rust_analyzer", "clangd" },
+	handlers = {
+		function(server_name)
+			require('lspconfig')[server_name].setup({})
+		end,
+	},
+	automatic_installation = true,
+})
 
 -- Nvim Treesitter --
 require'nvim-treesitter.configs'.setup {
@@ -111,14 +108,6 @@ require'nvim-treesitter.configs'.setup {
 		enable = true
 	}
 }
-
--- LSP-Zero --
-local lsp = require('lsp-zero').preset({'recommended'})
-lsp.on_attach(function(client, bufnr)
-  lsp.default_keymaps({buffer = bufnr})
-end)
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-lsp.setup()
 
 -- CMP --
 local cmp = require('cmp')
