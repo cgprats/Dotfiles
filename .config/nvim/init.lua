@@ -75,6 +75,7 @@ require("lazy").setup({
 	{'neovim/nvim-lspconfig'},
 	{'hrsh7th/cmp-nvim-lsp'},
 	{'hrsh7th/nvim-cmp'},
+	{'hrsh7th/cmp-buffer'},
 	{'L3MON4D3/LuaSnip'},
 })
 -- LSP-Zero --
@@ -114,6 +115,10 @@ local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
+	sources = {
+		{name = 'nvim_lsp'},
+		{name = 'buffer'},
+	},
 	mapping = {
 		-- confirm selection
 		['<CR>'] = cmp.mapping.confirm({select = false}),
@@ -128,7 +133,8 @@ cmp.setup({
 		-- scroll up and down in the completion documentation
     ['<C-f>'] = cmp.mapping.scroll_docs(5),
     ['<C-u>'] = cmp.mapping.scroll_docs(-5),
-	}
+	},
+	formatting = cmp_format,
 })
 
 -- Nvim Tree --
