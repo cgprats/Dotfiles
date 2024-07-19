@@ -77,6 +77,8 @@ require("lazy").setup({
 	{'hrsh7th/nvim-cmp'},
 	{'hrsh7th/cmp-buffer'},
 	{'L3MON4D3/LuaSnip'},
+	{'nvim-lua/plenary.nvim'},
+	{'nvim-telescope/telescope.nvim'},
 })
 -- LSP-Zero --
 local lsp_zero = require('lsp-zero')
@@ -179,3 +181,10 @@ require("bufferline").setup({
 		diagnostics = "nvim_lsp"
 	}
 })
+
+-- Telescope --
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
