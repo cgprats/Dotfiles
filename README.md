@@ -13,7 +13,6 @@
 * **tmux**
 * tpm (tmux plugin manager; will be installed by .tmux.conf)
 * **neovim**
-* Packer (will be installed by init.lua)
 
 -----
 
