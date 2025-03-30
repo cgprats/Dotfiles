@@ -1,6 +1,3 @@
-;; Set Color Theme
-(load-theme 'wombat)
-
 ;; Set Memory Constraints
 (setq gc-cons-threshold 50000000)
 (setq large-file-warning-threshold 100000000)
