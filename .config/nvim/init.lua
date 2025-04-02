@@ -61,7 +61,13 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	-- My plugins here
 	'akinsho/bufferline.nvim',
-	'Mofiqul/vscode.nvim',
+	{
+		'sainnhe/sonokai',
+		config = function()
+			vim.g.sonokai_enable_italic = true
+			vim.cmd.colorscheme('sonokai')
+		end
+	},
 	'nvim-lualine/lualine.nvim',
 	'nvim-tree/nvim-tree.lua',
 	'nvim-tree/nvim-web-devicons',
@@ -156,19 +162,10 @@ require("nvim-tree").setup({
 	}
 })
 
--- VSCode.nvim --
-local c = require('vscode.colors').get_colors()
-require('vscode').setup({
-	change_style = "dark",
-	italic_comments = true,
-	disable_nvimtree_bg = true
-})
-require('vscode').load()
-
 -- Lualine --
 require('lualine').setup({
 	options = {
-		theme = 'vscode',
+		theme = 'sonokai',
 		extensions = {'nvim-tree'},
 		sources = {'nvim_diagnostic', 'nvim_lsp'}
 	}
