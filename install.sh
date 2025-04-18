@@ -8,7 +8,7 @@ then
     echo "Detected Linux distribution: $ID"
     case "$ID" in
     fedora*)
-      sudo dnf install zsh vim-enhanced emacs tmux neovim fastfetch mosh ripgrep fd-find luarocks
+      sudo dnf install zsh vim-enhanced emacs tmux neovim fastfetch mosh ripgrep fd-find luarocks gawk
       ;;
     ubuntu*)
       sudo apt install zsh vim emacs tmux neovim neofetch mosh
