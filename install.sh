@@ -8,7 +8,8 @@ then
     echo "Detected Linux distribution: $ID"
     case "$ID" in
     fedora*)
-      sudo dnf install zsh vim-enhanced emacs tmux neovim fastfetch mosh ripgrep fd-find luarocks gawk
+      sudo dnf group install development-tools
+      sudo dnf install zsh vim-enhanced emacs tmux neovim fastfetch mosh ripgrep fd-find luarocks gawk curl fzf
       ;;
     ubuntu*)
       sudo apt install zsh vim emacs tmux neovim neofetch mosh
@@ -26,14 +27,13 @@ then
   fi
 elif [[ "$OSTYPE" == "darwin"* ]]
 then
-  brew install zsh vim emacs tmux neovim neofetch mosh
+  xcode-select --install
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  brew install zsh vim emacs tmux neovim neofetch mosh lazygit fzf ripgrep fd
 fi
 
 echo "Setting zsh as default shell"
 chsh -s $(which zsh)
-
-echo "Note: Please install a Nerd Font of your choice to use powerlevel10k"
-echo "Please see: https://github.com/ryanoasis/nerd-fonts"
 
 echo "Note: Please press C-b and then i to install tpm plugins"
 
@@ -43,6 +43,10 @@ cp -v .tmux.conf ~/
 cp -v .p10k.zsh ~/
 cp -v .vimrc ~/
 cp -v .emacs ~/
-cp -rv .config ~/
-cp -rv bin ~/
+
+echo "Installing LazyVim"
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+
+echo "You will have to manually install a Nerd Font for LazyVim"
+
 echo "Finished"
