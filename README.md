@@ -1,49 +1,5 @@
 # Dotfiles
 
-
------
-
-
-# **Dependencies:**
-* **zsh**
-* antigen (will be installed by zshrc)
-* nerd-fonts
-* **vim**
-* **emacs**
-* **tmux**
-* tpm (tmux plugin manager; will be installed by .tmux.conf)
-* **neovim**
-
------
-
-# **Dependency Installation Instructions:**
-
-**This is for when your current distribution is unsupported by install.sh**
-
-**zsh**
-```
-sudo pkcon install zsh
-```
-**nerd-fonts**
-* [Install a Nerd Font of your choice](https://github.com/ryanoasis/nerd-fonts)
-
-**vim**
-```
-sudo pkcon install vim
-```
-**emacs**
-```
-sudo pkcon install emacs
-```
-**tmux**
-```
-sudo pkcon install tmux
-```
-**neovim**
-```
-sudo pkcon install neovim
-```
-
 -----
 # **File locations**
 * .zshrc -> ~/.zshrc
@@ -55,6 +11,3 @@ sudo pkcon install neovim
 * .p10k.zsh -> ~/.p10k.zsh
 * .vimrc -> ~/.vimrc
 * .emacs -> ~/.emacs
-* .config/nvim/init.lua -> ~/.config/nvim/init.lua
-     * To Install neovim plugins, launch neovim and run the following vim commands:
-         * `:PackerInstall`
