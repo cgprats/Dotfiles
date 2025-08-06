@@ -58,16 +58,8 @@ antigen bundle colored-man-pages
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-# Set the theme
-antigen theme romkatv/powerlevel10k
-
 # Apply Antigen settings
 antigen apply
-
-# Load powerlevel10k configuration
-DEFAULT_USER=$(whoami)
-prompt_context(){}
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Load Tmux on interactive shell
 # This does not work reliably under macOS and WSL
@@ -76,3 +68,6 @@ then
 	[[ $- != *i* ]] && return
 	[[ -z "$TMUX" ]] && exec tmux
 fi
+
+# Enable starship
+eval "$(starship init zsh)"
