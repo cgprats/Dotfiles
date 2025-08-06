@@ -10,4 +10,3 @@
     * To apply tmux changes run: `tmux source ~/.tmux.conf`
 * .p10k.zsh -> ~/.p10k.zsh
 * .vimrc -> ~/.vimrc
-* .emacs -> ~/.emacs
