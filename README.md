@@ -2,6 +2,6 @@
 
 -----
 # **File locations**
-* .tmux.conf -> ~/.tmux.conf
-* .vimrc -> ~/.vimrc
-* .zshrc -> ~/.zshrc
+* tmux.conf -> ~/.tmux.conf
+* vimrc -> ~/.vimrc
+* zshrc -> ~/.zshrc
