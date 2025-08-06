@@ -42,10 +42,12 @@ cp -v .zshrc ~/.zshrc
 cp -v .tmux.conf ~/
 cp -v .p10k.zsh ~/
 cp -v .vimrc ~/
-cp -v .emacs ~/
 
 echo "Installing LazyVim"
 git clone https://github.com/LazyVim/starter ~/.config/nvim
+
+echo "Installing spacemacs
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 echo "You will have to manually install a Nerd Font for LazyVim"
 
