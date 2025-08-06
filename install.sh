@@ -52,9 +52,9 @@ echo "Setting zsh as default shell"
 chsh -s $(which zsh)
 
 echo "Copying config files"
-cp -v .zshrc ~/.zshrc
-cp -v .tmux.conf ~/
-cp -v .vimrc ~/
+cp -v zshrc ~/.zshrc
+cp -v tmux.conf ~/.tmux.conf
+cp -v vimrc ~/.vimrc
 
 echo "Configuring starship"
 ~/.local/bin/starship preset nerd-font-symbols -o ~/.config/starship.toml
