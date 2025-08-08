@@ -12,16 +12,17 @@ then
       sudo dnf install zsh vim-enhanced emacs tmux neovim fastfetch mosh ripgrep fd-find luarocks gawk curl fzf unzip
       ;;
     ubuntu*)
-      sudo apt install zsh vim emacs tmux neovim neofetch mosh
+      sudo apt install zsh vim emacs tmux neovim fastfetch mosh rust-ripgrep rust-fdfind gawk curl fzf unzip build-essential
       ;;
     opensuse*)
-      sudo zypper install zsh vim emacs tmux neovim mosh
+      sudo zypper install -t pattern devel_basis
+      sudo zypper install zsh vim emacs tmux fastfetch mosh ripgrep fd lua54-luarocks gawk curl fzf unzip
       ;;
     debian*)
-      sudo apt install vim emacs tmux neovim neofetch mosh
+      sudo apt install vim emacs tmux neovim fastfetch mosh rust-ripgrep rust-fdfind luarocks gawk curl fzf unzip build-essential
       ;;
      *)
-      pkcon install zsh vim-enhanced emacs tmux neovim neofetch mosh
+      pkcon install zsh vim-enhanced emacs tmux neovim fastfetch mosh ripgrep fd-find luarocks gawk curl fzf unzip gcc
       ;;
     esac
   fi
