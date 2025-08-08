@@ -45,7 +45,7 @@ curl -sS https://starship.rs/install.sh | sh -s -- -b ~/.local/bin -y
 echo "Installing LazyVim"
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 
-echo "Installing spacemacs
+echo "Installing spacemacs"
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 echo "Setting zsh as default shell"
