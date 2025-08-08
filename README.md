@@ -2,7 +2,7 @@
 
 -----
 # **File locations**
-* spacemacs -> ~/.spacemacs
-* tmux.conf -> ~/.tmux.conf
-* vimrc -> ~/.vimrc
-* zshrc -> ~/.zshrc
+* `spacemacs` &rarr; `$HOME/.spacemacs`
+* `tmux.conf` &rarr; `$HOME/.tmux.conf`
+* `vimrc` &rarr; `$HOME/.vimrc`
+* `zshrc` &rarr; `$HOME/.zshrc`
