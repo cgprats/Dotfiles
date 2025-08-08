@@ -56,6 +56,7 @@ echo "Copying config files"
 cp zshrc $HOME/.zshrc
 cp tmux.conf $HOME/.tmux.conf
 cp vimrc $HOME/.vimrc
+cp spacemacs $HOME/.spacemacs
 
 echo "Configuring starship"
 $HOME/.local/bin/starship preset nerd-font-symbols -o $HOME/.config/starship.toml
