@@ -36,7 +36,7 @@ echo "Installing FiraCode Nerd Font"
 curl -OL "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip"
 mkdir -p ~/.fonts
 unzip "FiraCode.zip" -d "$HOME/.fonts/FiraCode/"
-fc-cache -fv
+fc-cache -f
 
 echo "Installing Starship"
 mkdir -p $HOME/.local/bin
@@ -52,9 +52,9 @@ echo "Setting zsh as default shell"
 chsh -s $(which zsh)
 
 echo "Copying config files"
-cp -v zshrc $HOME/.zshrc
-cp -v tmux.conf $HOME/.tmux.conf
-cp -v vimrc $HOME/.vimrc
+cp zshrc $HOME/.zshrc
+cp tmux.conf $HOME/.tmux.conf
+cp vimrc $HOME/.vimrc
 
 echo "Configuring starship"
 $HOME/.local/bin/starship preset nerd-font-symbols -o $HOME/.config/starship.toml
