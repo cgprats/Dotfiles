@@ -1,5 +1,4 @@
 # Dotfiles
-
 -----
 # **File locations**
 * `spacemacs` &rarr; `$HOME/.spacemacs`
