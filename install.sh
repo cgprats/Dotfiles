@@ -35,28 +35,28 @@ fi
 echo "Installing FiraCode Nerd Font"
 curl -OL "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip"
 mkdir -p ~/.fonts
-unzip "FiraCode.zip" -d "~/.fonts/FiraCode/"
+unzip "FiraCode.zip" -d "$HOME/.fonts/FiraCode/"
 fc-cache -fv
 
 echo "Installing Starship"
-mkdir -p ~/.local/bin
-curl -sS https://starship.rs/install.sh | sh -s -- -b ~/.local/bin -y
+mkdir -p $HOME/.local/bin
+curl -sS https://starship.rs/install.sh | sh -s -- -b $HOME/.local/bin -y
 
 echo "Installing LazyVim"
-git clone https://github.com/LazyVim/starter ~/.config/nvim
+git clone https://github.com/LazyVim/starter $HOME/.config/nvim
 
 echo "Installing spacemacs"
-git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
 
 echo "Setting zsh as default shell"
 chsh -s $(which zsh)
 
 echo "Copying config files"
-cp -v zshrc ~/.zshrc
-cp -v tmux.conf ~/.tmux.conf
-cp -v vimrc ~/.vimrc
+cp -v zshrc $HOME/.zshrc
+cp -v tmux.conf $HOME/.tmux.conf
+cp -v vimrc $HOME/.vimrc
 
 echo "Configuring starship"
-~/.local/bin/starship preset nerd-font-symbols -o ~/.config/starship.toml
+$HOME/.local/bin/starship preset nerd-font-symbols -o $HOME/.config/starship.toml
 
 echo "Finished"
