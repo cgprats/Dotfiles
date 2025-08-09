@@ -1,9 +1,7 @@
 #!/bin/sh
 echo "Installing Packages"
-if [[ "$OSTYPE" == "linux"* ]]
-then
-  if [[ -f /etc/os-release ]]
-  then
+if [[ "$OSTYPE" == "linux"* ]]; then
+  if [[ -f /etc/os-release ]]; then
     source /etc/os-release
     echo "Detected Linux distribution: $ID"
     case "$ID" in
@@ -21,15 +19,16 @@ then
     debian*)
       sudo apt install vim emacs tmux neovim fastfetch mosh rust-ripgrep rust-fdfind luarocks gawk curl fzf unzip build-essential
       ;;
-     *)
+    *)
       pkcon install zsh vim-enhanced emacs tmux neovim fastfetch mosh ripgrep fd-find luarocks gawk curl fzf unzip gcc
       ;;
     esac
   fi
-elif [[ "$OSTYPE" == "darwin"* ]]
-then
+elif [[ "$OSTYPE" == "darwin"* ]]; then
   xcode-select --install
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  if ! command -v brew; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
   brew install zsh vim emacs-app tmux neovim neofetch mosh lazygit fzf ripgrep fd unzip
 fi
 
