@@ -30,7 +30,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]
 then
   xcode-select --install
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  brew install zsh vim emacs tmux neovim neofetch mosh lazygit fzf ripgrep fd unzip
+  brew install zsh vim emacs-app tmux neovim neofetch mosh lazygit fzf ripgrep fd unzip
 fi
 
 echo "Installing FiraCode Nerd Font"
