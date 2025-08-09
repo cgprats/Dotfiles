@@ -29,7 +29,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   if ! command -v brew; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
-  brew install zsh vim emacs-app tmux neovim fastfetch mosh lazygit fzf ripgrep fd unzip
+  brew install zsh vim emacs-app tmux neovim fastfetch mosh lazygit fzf ripgrep fd unzip gnu-tar
 fi
 
 echo "Installing FiraCode Nerd Font"
