@@ -3,8 +3,7 @@
 ## Installation Instructions
 1. `git clone https://github.com/cgprats/Dotfiles.git`
 2. `cd Dotfiles`
-3. `chmod +x install.sh`
-4. `./install.sh`
+3. `./install.sh`
 
 ## **File locations**
 * `spacemacs` &rarr; `$HOME/.spacemacs`
