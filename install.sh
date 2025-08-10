@@ -29,13 +29,13 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   if ! command -v brew; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
-  brew install zsh vim emacs-app tmux neovim fastfetch mosh lazygit fzf ripgrep fd unzip gnu-tar
+  brew install zsh vim emacs-app tmux neovim fastfetch mosh lazygit fzf ripgrep fd unzip gnu-tar font-atkynson-mono-nerd-font
 fi
 
 echo "Installing FiraCode Nerd Font"
-curl -OL "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip"
+curl -OL "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/AtkinsonHyperlegibleMono.zip"
 mkdir -p ~/.fonts
-unzip "FiraCode.zip" -d "$HOME/.fonts/FiraCode/"
+unzip "FiraCode.zip" -d "$HOME/.fonts/AtkinsonHyperlegibleMono/"
 fc-cache -f
 
 echo "Installing Starship"
