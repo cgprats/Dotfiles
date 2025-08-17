@@ -49,7 +49,6 @@ then
   unzip "Meslo.zip" -d "$HOME/.fonts/Meslo"
   unzip "Noto.zip" -d "$HOME/.fonts/Noto"
   fc-cache -f
-fi
 elif [[ "$OSTYPE" == "darwin"* ]]
 then
   brew install --cask font-atkynson-mono-nerd-font font-caskaydia-cove-nerd-font font-meslo-lg-nerd-font font-noto-nerd-font
