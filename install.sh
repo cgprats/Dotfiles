@@ -51,7 +51,7 @@ then
   fc-cache -f
 elif [[ "$OSTYPE" == "darwin"* ]]
 then
-  brew install --cask font-atkynson-mono-nerd-font font-caskaydia-cove-nerd-font font-meslo-lg-nerd-font font-noto-nerd-font
+  brew install --cask font-atkynson-mono-nerd-font font-caskaydia-cove-nerd-font font-meslo-lg-nerd-font font-noto-nerd-font font-sf-mono-nerd-font-ligaturized
 fi
 
 echo "Installing Starship"
