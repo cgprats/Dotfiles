@@ -12,6 +12,9 @@ export TERM="xterm-256color"
 # Set MANPATH
 export MANPATH=/usr/local/man:$MANPATH
 
+# Set MANPAGER
+export MANPAGER='nvim +Man!'
+
 # Set LANG
 export LANG=en_US.UTF-8
 
@@ -25,6 +28,7 @@ export EDITOR=vim
 alias doas="sudo"
 alias vim="nvim"
 alias emacs="emacs -nw"
+alias less="nvim +Man!"
 
 # Set platform specific aliases
 if [[ $OSTYPE == "darwin"* ]]
