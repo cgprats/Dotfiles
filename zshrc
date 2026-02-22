@@ -6,9 +6,6 @@ then
 fi
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH:/var/lib/flatpak/exports/bin:/usr/local/sbin:/usr/sbin:/sbin
 
-# Set terminal type
-export TERM="xterm-256color"
-
 # Set MANPATH
 export MANPATH=/usr/local/man:$MANPATH
 
@@ -57,21 +54,19 @@ antigen bundle dirhistory
 antigen bundle extract
 antigen bundle python
 antigen bundle sudo
+antigen bundle tmux
 antigen bundle web-search
 antigen bundle colored-man-pages
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
+# Automatically start tmux
+export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_AUTOCONNECT=false
+export ZSH_TMUX_FIXCOLORS=true
+
 # Apply Antigen settings
 antigen apply
-
-# Load Tmux on interactive shell
-# This does not work reliably under macOS and WSL
-if [[ "$OSTYPE" != "darwin"* ]]
-then
-	[[ $- != *i* ]] && return
-	[[ -z "$TMUX" ]] && exec tmux
-fi
 
 # Enable starship
 eval "$(starship init zsh)"
