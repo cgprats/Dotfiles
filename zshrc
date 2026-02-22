@@ -27,12 +27,6 @@ alias vim="nvim"
 alias emacs="emacs -nw"
 alias less="nvim +Man!"
 
-# Set platform specific aliases
-if [[ $OSTYPE == "darwin"* ]]
-then
-	alias gdb="lldb"
-fi
-
 # Antigen configuration
 # Install Antigen if missing
 if [ ! -f ~/.antigen.zsh ]
